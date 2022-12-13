@@ -5,7 +5,7 @@
 	import type { FileType, File as FileProps } from "../types";
     import File from "./File.svelte";
 
-	let files: FileProps[] = [];
+	export let files: FileProps[] = [];
 
 	function addFile(type: FileType, name: string) {
 		files = [
@@ -19,7 +19,7 @@
 	}
 </script>
 
-<div class="p-4 flex flex-col gap-4">
+<div class="flex flex-col gap-4">
 	<div>
 		<button 
 	 		title="Add a file"

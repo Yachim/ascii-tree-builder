@@ -93,7 +93,7 @@
 </span>
 
 {#if children.length > 0 && open}
-	<div class="pl-4 flex gap-4 flex-col">
+	<div class="pl-10 flex gap-4 flex-col">
 		{#each children as child, i}
 			<svelte:self 
 				{...child}		 		
