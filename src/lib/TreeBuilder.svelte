@@ -1,29 +1,39 @@
 <script lang="ts">
-	import type { FileType, File as FileProps } from "../types";
+    import { faFileCirclePlus, faFolderPlus } from "@fortawesome/free-solid-svg-icons";
+
+	import Fa from "svelte-fa/src/fa.svelte";
+import type { FileType, File as FileProps } from "../types";
     import File from "./File.svelte";
 
 	let files: FileProps[] = [];
 
-	let inp: string;
-
-	function addFile(type: FileType) {
+	function addFile(type: FileType, name: string) {
 		files = [
 			...files,
 			{
-				name: inp,
-				type: type
+				name: name,
+				type: type,
+				children: []
 			}
 		]
 	}
 </script>
 
 <div>
-	<input bind:value={inp} type="text" />
-	<button on:click={() => addFile("file")}>Přidat soubor</button>
-	<button on:click={() => addFile("folder")}>Přidat složku</button>
+	<button 
+		on:click={() => addFile("file", "new file")}
+	>
+		<Fa icon={faFileCirclePlus}/>
+	</button>
+	<button 
+		on:click={() => addFile("folder", "new folder")}
+	>
+		<Fa icon={faFolderPlus} />
+	</button>
+
 	<div>
 		{#each files as file}
-			<File name={file.name} type={file.type}/>
+			<File {...file} />
 		{/each}
 	</div>
 </div>
