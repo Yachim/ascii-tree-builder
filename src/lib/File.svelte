@@ -1,6 +1,5 @@
 <script lang="ts">
     import type { File, FileType } from "../types";
-	import Fa from 'svelte-fa/src/fa.svelte';
 	import { 
 		faFile,
 		faFolder,
@@ -8,8 +7,10 @@
 		faChevronRight,
 		faFolderOpen, 
 		faFileCirclePlus,
-		faFolderPlus
+		faFolderPlus,
+        faXmark
 	} from '@fortawesome/free-solid-svg-icons';
+    import Fa from "svelte-fa/src/fa.svelte";
 
 
 	export let name: string;
@@ -46,41 +47,56 @@
 	} 
 </script>
 
-<div>
+<span class="flex gap-2 justify-start items-center">
 	{#if type === "folder"}
-		<button	on:click={() => open = !open}>
-			<Fa icon={chevronIcon} />
+		<button
+			title="Collapse this folder"
+			on:click={() => open = !open}
+		>
+			<Fa fw pull={"left"} icon={chevronIcon} />
 		</button>
 	{/if}
 
-	<Fa icon={icon} />
+	<!-- TODO: fix pull -->
+	<Fa fw pull={"right"} icon={icon} />
+
 	<span 
 		contenteditable="true" 
 		bind:innerHTML={name} 
-	></span>
+	>
+
+	</span>
 
 	{#if type === "folder"}
 		<button 
+			title="Add a file as a child"
 			on:click={() => addFile("file", "new file")}
 		>
 			<Fa icon={faFileCirclePlus}/>
 		</button>
 		<button 
+			title="Add a folder as a child"
 			on:click={() => addFile("folder", "new folder")}
 		>
 			<Fa icon={faFolderPlus} />
 		</button>
 	{/if}
 
-	{#if children && open}
-		<div class="p-4">
-			{#each children as child}
-				<svelte:self 
-					{...child}		 		
-					bind:name={child.name}
-					bind:children={child.children}
-				/>
-			{/each}
-		</div>
-	{/if}
-</div>
+	<button
+		title="Remove this item"
+	>
+		<Fa	icon={faXmark} />
+	</button>
+</span>
+
+{#if children.length > 0 && open}
+	<div class="pl-4 flex gap-4 flex-col">
+		{#each children as child}
+			<svelte:self 
+				{...child}		 		
+				bind:name={child.name}
+				bind:children={child.children}
+			/>
+		{/each}
+	</div>
+{/if}

@@ -19,19 +19,23 @@
 	}
 </script>
 
-<div>
-	<button 
-		on:click={() => addFile("file", "new file")}
-	>
-		<Fa icon={faFileCirclePlus}/>
-	</button>
-	<button 
-		on:click={() => addFile("folder", "new folder")}
-	>
-		<Fa icon={faFolderPlus} />
-	</button>
-
+<div class="p-4 flex flex-col gap-4">
 	<div>
+		<button 
+	 		title="Add a file"
+			on:click={() => addFile("file", "new file")}
+		>
+			<Fa icon={faFileCirclePlus}/>
+		</button>
+		<button 
+			title="Add a folder"
+			on:click={() => addFile("folder", "new folder")}
+		>
+			<Fa icon={faFolderPlus} />
+		</button>
+	</div>
+
+	<div class="flex flex-col gap-4">
 		{#each files as file}
 			<File 
 				{...file}
