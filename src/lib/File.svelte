@@ -16,6 +16,7 @@
 	export let name: string;
 	export let type: FileType;
 	export let children: File[] = [];
+	export let remove: () => void;
 
 	let open = true;
 
@@ -84,6 +85,8 @@
 
 	<button
 		title="Remove this item"
+		on:click={remove}
+		class="transition-colors duration-200 ease-in-out hover:text-red-500"
 	>
 		<Fa	icon={faXmark} />
 	</button>
@@ -91,9 +94,15 @@
 
 {#if children.length > 0 && open}
 	<div class="pl-4 flex gap-4 flex-col">
-		{#each children as child}
+		{#each children as child, i}
 			<svelte:self 
 				{...child}		 		
+			 	remove={() => {
+					children = [
+						...children.slice(0, i),
+						...children.slice(i+1)
+					]
+		 		}}
 				bind:name={child.name}
 				bind:children={child.children}
 			/>

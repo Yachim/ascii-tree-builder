@@ -36,9 +36,15 @@
 	</div>
 
 	<div class="flex flex-col gap-4">
-		{#each files as file}
+		{#each files as file, i}
 			<File 
 				{...file}
+			 	remove={() => {
+					files = [
+						...files.slice(0, i),
+						...files.slice(i+1)
+					]
+		 		}}
 				bind:name={file.name}
 				bind:children={file.children}
 			/>
