@@ -1,8 +1,8 @@
 <script lang="ts">
     import { faFileCirclePlus, faFolderPlus } from "@fortawesome/free-solid-svg-icons";
-
 	import Fa from "svelte-fa/src/fa.svelte";
-import type { FileType, File as FileProps } from "../types";
+
+	import type { FileType, File as FileProps } from "../types";
     import File from "./File.svelte";
 
 	let files: FileProps[] = [];
@@ -15,7 +15,7 @@ import type { FileType, File as FileProps } from "../types";
 				type: type,
 				children: []
 			}
-		]
+		];
 	}
 </script>
 
@@ -33,7 +33,11 @@ import type { FileType, File as FileProps } from "../types";
 
 	<div>
 		{#each files as file}
-			<File {...file} />
+			<File 
+				{...file}
+				bind:name={file.name}
+				bind:children={file.children}
+			/>
 		{/each}
 	</div>
 </div>

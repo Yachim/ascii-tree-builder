@@ -42,7 +42,7 @@
 				type: type,
 				children: []
 			}
-		]
+		];
 	} 
 </script>
 
@@ -75,7 +75,11 @@
 	{#if children && open}
 		<div class="p-4">
 			{#each children as child}
-				<svelte:self {...child} />
+				<svelte:self 
+					{...child}		 		
+					bind:name={child.name}
+					bind:children={child.children}
+				/>
 			{/each}
 		</div>
 	{/if}
