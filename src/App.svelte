@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { getContext } from "svelte";
-
     import Output from "./lib/Output.svelte";
 	import TreeBuilder from "./lib/TreeBuilder.svelte";
 	
