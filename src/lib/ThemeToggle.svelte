@@ -1,10 +1,5 @@
 <script lang="ts">
-    import { setContext } from "svelte";
-    import { writable } from "svelte/store";
-
-
-	let lightTheme = false;
-	$: setContext("lightTheme", lightTheme);
+	import { lightThemeStore } from "../stores";
 </script>
 
-<input type="checkbox" checked={lightTheme}>
+<input type="checkbox" bind:checked={$lightThemeStore}>

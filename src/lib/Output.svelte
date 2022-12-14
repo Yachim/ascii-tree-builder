@@ -24,7 +24,7 @@
 	$: text = filesToText(files, 0);
 </script>
 
-<p class="p-4 w-full h-full bg-panelBg rounded-xl shadow-2xl overflow-scroll">
+<p class="p-4 w-full h-full bg-panelBg rounded-xl overflow-auto">
 	{text}	
 </p>
 
