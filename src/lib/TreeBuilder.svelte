@@ -19,23 +19,25 @@
 	}
 </script>
 
-<div class="flex flex-col gap-4">
-	<div>
+<div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl shadow-2xl">
+	<div class="flex gap-3 pt-4 px-4 pb-2 border-b-2 border-borderColor">
 		<button 
 	 		title="Add a file"
+			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
 			on:click={() => addFile("file", "new file")}
 		>
 			<Fa icon={faFileCirclePlus}/>
 		</button>
 		<button 
 			title="Add a folder"
+			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
 			on:click={() => addFile("folder", "new folder")}
 		>
 			<Fa icon={faFolderPlus} />
 		</button>
 	</div>
 
-	<div class="flex flex-col gap-4">
+	<div class="flex flex-col gap-4 overflow-scroll pb-4 px-4">
 		{#each files as file, i}
 			<File 
 				{...file}

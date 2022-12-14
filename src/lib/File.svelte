@@ -11,6 +11,7 @@
         faXmark
 	} from '@fortawesome/free-solid-svg-icons';
     import Fa from "svelte-fa/src/fa.svelte";
+    import { onMount } from "svelte";
 
 
 	export let name: string;
@@ -46,12 +47,18 @@
 			}
 		];
 	} 
+
+	let el: HTMLElement;
+	onMount(() => {
+		el.focus();
+	})
 </script>
 
 <span class="flex gap-2 justify-start items-center">
 	{#if type === "folder"}
 		<button
 			title="Collapse this folder"
+			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
 			on:click={() => open = !open}
 		>
 			<Fa fw pull={"left"} icon={chevronIcon} />
@@ -64,6 +71,7 @@
 	<span 
 		contenteditable="true" 
 		bind:innerHTML={name} 
+		bind:this={el}
 	>
 
 	</span>
@@ -71,12 +79,14 @@
 	{#if type === "folder"}
 		<button 
 			title="Add a file as a child"
+			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
 			on:click={() => addFile("file", "new file")}
 		>
 			<Fa icon={faFileCirclePlus}/>
 		</button>
 		<button 
 			title="Add a folder as a child"
+			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
 			on:click={() => addFile("folder", "new folder")}
 		>
 			<Fa icon={faFolderPlus} />
@@ -86,7 +96,7 @@
 	<button
 		title="Remove this item"
 		on:click={remove}
-		class="transition-colors duration-200 ease-in-out hover:text-red-500"
+		class="transition-colors duration-200 ease-in-out hover:text-hoverRed"
 	>
 		<Fa	icon={faXmark} />
 	</button>
