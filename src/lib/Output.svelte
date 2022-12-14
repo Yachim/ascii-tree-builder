@@ -24,13 +24,6 @@
 	$: text = filesToText(files, 0);
 </script>
 
-<p class="p-4 w-full h-full bg-panelBg shadow-sm shadow-panelBg rounded-xl overflow-auto">
+<p class="font-mono whitespace-pre-line p-4 w-full h-full bg-panelBg shadow-sm shadow-panelBg rounded-xl overflow-auto">
 	{text}	
 </p>
-
-<style>
-	p {
-		font-family: monospace;
-		white-space: pre-line;
-	}
-</style>
