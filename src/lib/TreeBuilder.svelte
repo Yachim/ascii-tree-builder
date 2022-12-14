@@ -21,21 +21,23 @@
 </script>
 
 <div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl shadow-panelBg shadow-sm">
-	<div class="flex gap-3 pt-4 px-4 pb-2 border-b-2 border-textColor">
-		<button 
-	 		title="Add a file"
-			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
-			on:click={() => addFile("file", "new file")}
-		>
-			<Fa icon={faFileCirclePlus}/>
-		</button>
-		<button 
-			title="Add a folder"
-			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
-			on:click={() => addFile("folder", "new folder")}
-		>
-			<Fa icon={faFolderPlus} />
-		</button>
+	<div class="flex justify-between pt-4 px-4 pb-2 border-b-2 border-textColor">
+		<span class="flex gap-3">
+			<button 
+		 		title="Add a file"
+				class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
+				on:click={() => addFile("file", "new file")}
+			>
+				<Fa icon={faFileCirclePlus}/>
+			</button>
+			<button 
+				title="Add a folder"
+				class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
+				on:click={() => addFile("folder", "new folder")}
+			>
+				<Fa icon={faFolderPlus} />
+			</button>
+		</span>
 
 		<ThemeToggle/>
 	</div>

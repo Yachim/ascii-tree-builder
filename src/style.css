@@ -5,22 +5,103 @@
 @layer base {
 	:root {
 		font-family: sans-serif;
-		
-		--site-bg: #0b0a0f;
-		--bg: #2c293d;
-		--panel-bg: #37334d;
-		--text-color: #c6c2d6;
 		--remove-hover: #cc1010;
-		--button-hover: #706699;
 	}
 
-	.light-theme {
-		--site-bg: #9be7fa;
-		--bg: #3dd0f5;
-		--panel-bg: #0dc4f2;
-		--text-color: #032730;
-		--remove-hover: #cc1010;
-		--button-hover: #9feafc;
+	.red-theme {
+		--site-bg: hsl(0deg, 20%, 5%);
+		--bg: hsl(0deg, 20%, 20%);
+		--panel-bg: hsl(0deg, 20%, 25%);
+		--text-color: hsl(0deg, 20%, 80%);
+		--button-hover: hsl(0deg, 20%, 50%);
+	}
+
+	.orange-theme {
+		--site-bg: hsl(30deg, 20%, 5%);
+		--bg: hsl(30deg, 20%, 20%);
+		--panel-bg: hsl(30deg, 20%, 25%);
+		--text-color: hsl(30deg, 20%, 80%);
+		--button-hover: hsl(30deg, 20%, 50%);
+	}
+
+	.yellow-theme {
+		--site-bg: hsl(60deg, 20%, 5%);
+		--bg: hsl(60deg, 20%, 20%);
+		--panel-bg: hsl(60deg, 20%, 25%);
+		--text-color: hsl(60deg, 20%, 80%);
+		--button-hover: hsl(60deg, 20%, 50%);
+	}
+
+	.yellow-green-theme {
+		--site-bg: hsl(90deg, 20%, 5%);
+		--bg: hsl(90deg, 20%, 20%);
+		--panel-bg: hsl(90deg, 20%, 25%);
+		--text-color: hsl(90deg, 20%, 80%);
+		--button-hover: hsl(90deg, 20%, 50%);
+	}
+	
+	.green-theme {
+		--site-bg: hsl(120deg, 20%, 5%);
+		--bg: hsl(120deg, 20%, 20%);
+		--panel-bg: hsl(120deg, 20%, 25%);
+		--text-color: hsl(120deg, 20%, 80%);
+		--button-hover: hsl(120deg, 20%, 50%);
+	}
+
+	.dark-green-theme {
+		--site-bg: hsl(150deg, 20%, 5%);
+		--bg: hsl(150deg, 20%, 20%);
+		--panel-bg: hsl(150deg, 20%, 25%);
+		--text-color: hsl(150deg, 20%, 80%);
+		--button-hover: hsl(150deg, 20%, 50%);
+	}
+
+	.green-blue-theme {
+		--site-bg: hsl(180deg, 20%, 5%);
+		--bg: hsl(180deg, 20%, 20%);
+		--panel-bg: hsl(180deg, 20%, 25%);
+		--text-color: hsl(180deg, 20%, 80%);
+		--button-hover: hsl(180deg, 20%, 50%);
+	}
+	
+	.gray-theme {
+		--site-bg: hsl(210deg, 20%, 5%);
+		--bg: hsl(210deg, 20%, 20%);
+		--panel-bg: hsl(210deg, 20%, 25%);
+		--text-color: hsl(210deg, 20%, 80%);
+		--button-hover: hsl(210deg, 20%, 50%);
+	}
+
+	.dark-purple-theme {
+		--site-bg: hsl(240deg, 20%, 5%);
+		--bg: hsl(240deg, 20%, 20%);
+		--panel-bg: hsl(240deg, 20%, 25%);
+		--text-color: hsl(240deg, 20%, 80%);
+		--button-hover: hsl(240deg, 20%, 50%);
+	}
+
+	.purple-theme {
+		--site-bg: hsl(270deg, 20%, 5%);
+		--bg: hsl(270deg, 20%, 20%);
+		--panel-bg: hsl(270deg, 20%, 25%);
+		--text-color: hsl(270deg, 20%, 80%);
+		--button-hover: hsl(270deg, 20%, 50%);
+	}
+
+	.pink-theme {
+		--site-bg: hsl(300deg, 20%, 5%);
+		--bg: hsl(300deg, 20%, 20%);
+		--panel-bg: hsl(300deg, 20%, 25%);
+		--text-color: hsl(300deg, 20%, 80%);
+		--button-hover: hsl(300deg, 20%, 50%);
+	}
+
+	.pink-red-theme {
+		--site-bg: hsl(330deg, 20%, 5%);
+		--bg: hsl(330deg, 20%, 20%);
+		--panel-bg: hsl(330deg, 20%, 25%);
+		--text-color: hsl(330deg, 20%, 80%);
+		--button-hover: hsl(330deg, 20%, 50%);
 	}
 
 	* {
