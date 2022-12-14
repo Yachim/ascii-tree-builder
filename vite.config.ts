@@ -4,8 +4,9 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-  css:{
-    postcss
-  }
+	base: "/ascii-tree-builder/",
+	plugins: [svelte()],
+  	css:{
+    	postcss
+  	}
 })
