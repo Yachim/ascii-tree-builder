@@ -20,7 +20,7 @@
 	}
 </script>
 
-<div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl">
+<div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl shadow-panelBg shadow-sm">
 	<div class="flex gap-3 pt-4 px-4 pb-2 border-b-2 border-textColor">
 		<button 
 	 		title="Add a file"
