@@ -4,7 +4,6 @@
 
 	import type { FileType, File as FileProps } from "../types";
     import File from "./File.svelte";
-    import ThemeToggle from "./ThemeToggle.svelte";
 
 	export let files: FileProps[] = [];
 
@@ -21,8 +20,7 @@
 </script>
 
 <div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl shadow-panelBg shadow-sm">
-	<div class="flex justify-between p-4 border-b-2 border-textColor">
-		<span class="flex gap-3">
+	<div class="flex gap-3 p-4 border-b-2 border-textColor">
 			<button 
 		 		title="Add a file"
 				class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
@@ -37,9 +35,7 @@
 			>
 				<Fa icon={faFolderPlus} />
 			</button>
-		</span>
 
-		<ThemeToggle/>
 	</div>
 
 	<div class="flex flex-col gap-4 overflow-auto pb-4 px-4">

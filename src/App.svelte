@@ -9,10 +9,12 @@
 	let files: File[] = [];
 	
 	import { themeStore } from "./stores";
+    import ThemeToggle from "./lib/ThemeToggle.svelte";
 </script>
 
-<div class="{$themeStore} bg-siteBg w-screen h-screen text-textColor py-32 px-64">
-	<div class="p-4 flex flex-row gap-4 justify-between bg-bg h-full w-full rounded-xl shadow-2xl shadow-bg">
+<div class="{$themeStore} bg-siteBg w-screen h-screen text-textColor grid place-items-center">
+	<div class="p-4 flex flex-row gap-4 justify-between bg-bg h-4/6 w-8/12 rounded-xl shadow-2xl shadow-bg">
+		<ThemeToggle/>
 		<TreeBuilder bind:files={files} />
 		<Output files={files} />
 	</div>
