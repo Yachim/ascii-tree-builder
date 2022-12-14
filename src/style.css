@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind base;
 
-:root {
-	font-family: sans-serif;
+@layer base {
+	:root {
+		font-family: sans-serif;
+		
+		--site-bg: #0b0a0f;
+		--bg: #2c293d;
+		--panel-bg: #37334d;
+		--text-color: #c6c2d6;
+		--remove-hover: #cc1010;
+		--button-hover: #706699;
+	}
+
+	.light-theme {
+		--site-bg: #9be7fa;
+		--bg: #3dd0f5;
+		--panel-bg: #0dc4f2;
+		--text-color: #032730;
+		--remove-hover: #cc1010;
+		--button-hover: #9feafc;
+	}
+
+	* {
+		transition-property: background-color, color;
+		transition-duration: 200ms;
+		transition-timing-function: ease-in-out;
+	}
 }

@@ -96,7 +96,7 @@
 	<button
 		title="Remove this item"
 		on:click={remove}
-		class="transition-colors duration-200 ease-in-out hover:text-hoverRed"
+		class="transition-colors duration-200 ease-in-out hover:text-removeHover"
 	>
 		<Fa	icon={faXmark} />
 	</button>
