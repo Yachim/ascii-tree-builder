@@ -48,6 +48,12 @@
 						...files.slice(i+1)
 					]
 		 		}}
+		 		index={i}
+				swap={swapWith => {
+			 		[files[i], files[swapWith]] = [files[swapWith], files[i]];
+		 			files = [...files]
+				}}
+		 		last={i === files.length - 1}
 				bind:name={file.name}
 				bind:children={file.children}
 			/>

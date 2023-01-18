@@ -8,7 +8,9 @@
 		faFolderOpen, 
 		faFileCirclePlus,
 		faFolderPlus,
-        faXmark
+        faXmark,
+        faCaretUp,
+        faCaretDown
 	} from '@fortawesome/free-solid-svg-icons';
     import Fa from "svelte-fa/src/fa.svelte";
     import { onMount } from "svelte";
@@ -18,6 +20,10 @@
 	export let type: FileType;
 	export let children: File[] = [];
 	export let remove: () => void;
+	export let last = false;
+
+	export let index: number;
+	export let swap: (swapWith: number) => void;
 
 	let open = true;
 
@@ -100,6 +106,25 @@
 	>
 		<Fa	icon={faXmark} />
 	</button>
+
+	<div class="flex flex-col">
+		<button 
+			title="Move up"
+			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
+			class:opacity-0={index === 0}
+			on:click={() => swap(index - 1)}
+		>
+			<Fa icon={faCaretUp} size="sm" translateY={0.2}/>
+		</button>
+		<button 
+			title="Move down"
+			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
+			class:opacity-0={last}
+			on:click={() => swap(index + 1)}
+		>
+			<Fa icon={faCaretDown} size="sm" translateY={-0.2}/>
+		</button>
+	</div>
 </span>
 
 {#if children.length > 0 && open}
@@ -113,6 +138,12 @@
 						...children.slice(i+1)
 					]
 		 		}}
+		 		index={i}
+				swap={swapWith => {
+			 		[children[i], children[swapWith]] = [children[swapWith], children[i]];
+		 			child.children = [...child.children]
+				}}
+		 		last={i === children.length - 1}
 				bind:name={child.name}
 				bind:children={child.children}
 			/>
