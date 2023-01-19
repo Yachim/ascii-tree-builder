@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { faFileCirclePlus, faFolderPlus } from "@fortawesome/free-solid-svg-icons";
+    import { faFileCirclePlus, faFolderPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/fa.svelte";
 
 	import type { FileType, File as FileProps } from "../types";
@@ -17,10 +17,13 @@
 			}
 		];
 	}
+
+	export let clearFunc: () => void;
 </script>
 
 <div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl shadow-panelBg shadow-sm">
-	<div class="flex gap-3 p-4 border-b-2 border-textColor">
+	<div class="flex justify-between p-4 border-b-2 border-textColor">
+		<div class="flex gap-3">
 			<button 
 		 		title="Add a file"
 				class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
@@ -35,7 +38,15 @@
 			>
 				<Fa icon={faFolderPlus} />
 			</button>
+		</div>
 
+			<button 
+				title="Clear all"
+				class="transition-colors duration-200 ease-in-out hover:text-removeHover"
+				on:click={clearFunc}
+			>
+				<Fa icon={faXmark} />
+			</button>
 	</div>
 
 	<div class="flex flex-col gap-4 overflow-auto pb-4 px-4">
