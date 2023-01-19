@@ -7,7 +7,6 @@
 	let files: File[] = [];
 	
 	import { themeStore } from "./stores";
-    import ThemeToggle from "./lib/ThemeToggle.svelte";
 
 	function resetFiles() {
 		files = [];
@@ -15,8 +14,14 @@
 </script>
 
 <div class="{$themeStore} font-sans bg-siteBg w-screen h-screen text-textColor grid place-items-center">
-	<div class="overflow-hidden p-4 flex flex-row gap-4 justify-between bg-bg h-4/6 w-8/12 rounded-xl shadow-2xl shadow-bg">
-		<ThemeToggle/>
+	<div
+		class="
+			overflow-hidden p-4 flex gap-4 bg-bg h-4/6 rounded-xl shadow-2xl shadow-bg
+			w-11/12 sm:w-10/12 lg:w-9/12 2xl:w-8/12
+		"
+	>
+		<!--<ThemeToggle/>-->
+
 		<TreeBuilder clearFunc={resetFiles} bind:files={files} />
 		<Output files={files} />
 	</div>
