@@ -21,7 +21,7 @@
 	export let clearFunc: () => void;
 </script>
 
-<div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl shadow-panelBg shadow-sm">
+<div class="flex flex-col gap-4 w-full h-full bg-panelBg rounded-xl shadow-panelBg shadow-sm overflow-hidden">
 	<div class="flex justify-between p-4 border-b-2 border-textColor">
 		<div class="flex gap-3">
 			<button 
