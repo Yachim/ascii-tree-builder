@@ -112,6 +112,7 @@
 			title="Move up"
 			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
 			class:opacity-0={index === 0}
+			disabled={index === 0}
 			on:click={() => swap(index - 1)}
 		>
 			<Fa icon={faCaretUp} size="sm" translateY={0.2}/>
@@ -120,6 +121,7 @@
 			title="Move down"
 			class="transition-colors duration-200 ease-in-out hover:text-buttonHover"
 			class:opacity-0={last}
+			disabled={last}
 			on:click={() => swap(index + 1)}
 		>
 			<Fa icon={faCaretDown} size="sm" translateY={-0.2}/>
@@ -141,7 +143,7 @@
 		 		index={i}
 				swap={swapWith => {
 			 		[children[i], children[swapWith]] = [children[swapWith], children[i]];
-		 			child.children = [...child.children]
+		 			children = [...children]
 				}}
 		 		last={i === children.length - 1}
 				bind:name={child.name}
